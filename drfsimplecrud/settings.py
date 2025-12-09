@@ -29,12 +29,24 @@ DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['localhost']
 
+#----------------------------
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+# if RENDER_EXTERNAL_HOSTNAME:
+#    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+#ALLOWED_HOSTS.append('.onrender.com')
+ALLOWED_HOSTS = ['localhost']
+
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
-ALLOWED_HOSTS.append('.onrender.com')
+# Dominio de servicio en Render
+RENDER_SERVICE_HOSTNAME = os.environ.get('RENDER_SERVICE_HOSTNAME')
+if RENDER_SERVICE_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_SERVICE_HOSTNAME)
+
+
 
 # Application definition
 
