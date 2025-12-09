@@ -2,7 +2,7 @@ from rest_framework import routers
 from .api import ProjectViewSet
 
 router = routers.DefaultRouter()
-router.register('api/projects', ProjectViewSet, 'projects')
+router.register(r'api/projects', ProjectViewSet, basename='projects')
 
 
 urlpatterns = router.urls
